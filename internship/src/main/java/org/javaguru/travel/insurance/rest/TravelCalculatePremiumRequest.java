@@ -10,6 +10,12 @@ public class TravelCalculatePremiumRequest {
     private Date agreementDateTo;
 
     public TravelCalculatePremiumRequest() { }
+    public TravelCalculatePremiumRequest(String personFirstName, String personLastName, Date agreementDateFrom, Date agreementDateTo) {
+        this.personFirstName = personFirstName;
+        this.personLastName = personLastName;
+        this.agreementDateFrom = agreementDateFrom;
+        this.agreementDateTo = agreementDateTo;
+    }
 
 
 }
