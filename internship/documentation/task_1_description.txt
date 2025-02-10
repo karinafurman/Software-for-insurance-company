@@ -1,0 +1,3 @@
+В ходе выполнения данного задания, я познакомилась с Build Tool Gradle,
+прослушала запись лекции про Build Tools, Maven структуру проекта,
+Gradle и Continuous Integration (CI), а также настроила Gradle в своём проекте.

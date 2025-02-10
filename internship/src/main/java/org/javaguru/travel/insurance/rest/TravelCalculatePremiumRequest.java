@@ -9,4 +9,7 @@ public class TravelCalculatePremiumRequest {
     private Date agreementDateFrom;
     private Date agreementDateTo;
 
+    public TravelCalculatePremiumRequest() { }
+
+
 }
