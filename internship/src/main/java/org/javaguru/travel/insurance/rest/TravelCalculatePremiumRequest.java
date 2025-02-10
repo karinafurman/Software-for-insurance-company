@@ -16,6 +16,29 @@ public class TravelCalculatePremiumRequest {
         this.agreementDateFrom = agreementDateFrom;
         this.agreementDateTo = agreementDateTo;
     }
-
+    public String getPersonFirstName() {
+        return personFirstName;
+    }
+    public void setPersonFirstName(String personFirstName) {
+        this.personFirstName = personFirstName;
+    }
+    public String getPersonLastName() {
+        return personLastName;
+    }
+    public void setPersonLastName(String personLastName) {
+        this.personLastName = personLastName;
+    }
+    public Date getAgreementDateFrom() {
+        return agreementDateFrom;
+    }
+    public void setAgreementDateFrom(Date agreementDateFrom) {
+        this.agreementDateFrom = agreementDateFrom;
+    }
+    public Date getAgreementDateTo() {
+        return agreementDateTo;
+    }
+    public void setAgreementDateTo(Date agreementDateTo) {
+        this.agreementDateTo = agreementDateTo;
+    }
 
 }
