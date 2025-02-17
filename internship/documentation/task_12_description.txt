@@ -1,0 +1,4 @@
+В ходе выполнения этого задания я работала с классом TravelCalculatePremiumServiceImpl.
+В данном классе реализуется (@Override) метод calculatePremium интерфейса TravelCalculatePremiumService.
+На вход метод принимает переменную request класса TravelCalculatePremiumRequest, затем в методе создается response,
+объект класса TravelCalculatePremiumResponse. Далее set-методы response заполняются get-методами request.
