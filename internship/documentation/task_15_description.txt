@@ -1,0 +1,23 @@
+В ходе выполнения данного задания, я создавала тесты для TravelCalculatePremiumServiceImpl при помощи
+AI инструмента: чата Deepseek.
+В классе TravelCalculatePremiumServiceImplAIOneTest находится тест (один на все свойства), сгенерированный deepseek.
+Сравнивая данный тест и тест, написанный мною вручную при выполнении task 13, можно обнаружить следующие различия:
+В моем тесте в request, объекте класса TravelCalculatePremiumResponse при помощи методов setAgreementDateFrom и
+setAgreementDateTo создаются новые объекты класса Date (new Date). Deepseek предлагает сразу заполнить эти
+значения данными:
+request.setAgreementDateFrom(newDate(2023, 10, 1));
+request.setAgreementDateTo(newDate(2023, 10, 10));
+При помощи метода assertEquals происходит сравнение свойств. Deepseek предлагает дополнительно использовать
+ метод assertAll, который позволяет проверить несколько утверждений в одном тесте; если какое-то из утверждений
+  не выполнится, тест не прервется сразу, а покажет ошибку.
+Если одно из утверждений не выполнится, deepseek предлагает выдавать сообщение об ошибке:
+“First name should match”
+“Last name should match”
+“Agreement date from should match”
+“Agreement date to should match”
+В классе TravelCalculatePremiumServiceImplAIEachFieldTest находятся тесты (отдельный тест на каждое свойство),
+сгенерированные deepseek. В тестах используются методы assertEquals для проверки равенства ожидаемого и фактического
+ значений. Для тестирования дат (agreementDateFrom и agreementDateTo) используются объекты класса Date,
+ которые создаются на момент выполнения теста.
+
+

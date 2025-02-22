@@ -1,4 +1,5 @@
-В ходе выполнения текущего задания, я внесла изменения в класс TravelCalculatePremiumServiceImplTest, написав отдельный тестовый метод на каждое поле ответа:
+В ходе выполнения текущего задания, я внесла изменения в класс TravelCalculatePremiumServiceImplTest,
+написав отдельный тестовый метод на каждое поле ответа:
 responseCorrectnessPersonFirstName()
 responseCorrectnessPersonLastName()
 responseCorrectnessAgreementDateFrom()
