@@ -1,0 +1,17 @@
+В ходе выполнения текущего задания, я внесла изменения в класс TravelCalculatePremiumServiceImplTest, написав отдельный тестовый метод на каждое поле ответа:
+responseCorrectnessPersonFirstName()
+responseCorrectnessPersonLastName()
+responseCorrectnessAgreementDateFrom()
+responseCorrectnessAgreementDateTo()
+Будут ли dateFrom и dateTo
+разными или одинаковыми при выполнении следующего кода?
+        request.setAgreementDateFrom(new Date());
+        request.setAgreementDateTo(new Date());
+Ответ: В данном коде dateFrom и dateTo будут разными, даже если они устанавливаются в один и тот же момент времени.
+new Date() создает новый объект Date, который содержит текущую дату и время на момент его создания.
+Даже если вызовы new Date() происходят практически одновременно, между ними проходит некоторое (очень малое) время.
+Если нужно, чтобы dateFrom и dateTo были одинаковыми, нужно использовать один и тот же объект Date:
+Date currentDate = new Date();
+request.setAgreementDateFrom(currentDate);
+request.setAgreementDateTo(currentDate);
+Теперь dateFrom и dateTo будут ссылаться на один и тот же объект Date, и их значения будут идентичными.
