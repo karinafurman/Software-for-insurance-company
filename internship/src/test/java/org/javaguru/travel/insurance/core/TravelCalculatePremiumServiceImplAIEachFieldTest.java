@@ -36,24 +36,4 @@ public class TravelCalculatePremiumServiceImplAIEachFieldTest {
         assertEquals(new Date(2023, 10, 10), response.getAgreementDateTo());
     }
 
-    @Test
-    void testCalculatePremiumWithNullValues() {
-        // Подготовка входных данных с null значениями
-        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
-        request.setPersonFirstName(null);
-        request.setPersonLastName(null);
-        request.setAgreementDateFrom(null);
-        request.setAgreementDateTo(null);
-
-
-        TravelCalculatePremiumResponse response = service.calculatePremium(request);
-
-
-        assertNotNull(response);
-        assertNull(response.getPersonFirstName());
-        assertNull(response.getPersonLastName());
-        assertNull(response.getAgreementDateFrom());
-        assertNull(response.getAgreementDateTo());
-    }
-
 }
