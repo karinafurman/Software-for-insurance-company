@@ -17,11 +17,15 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
             response.setAgreementDateFrom(request.getAgreementDateFrom());
             response.setAgreementDateTo(request.getAgreementDateTo());
 
-            long diff = request.getAgreementDateFrom().getTime() - request.getAgreementDateTo().getTime();
-            var daysBetween = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+            long daysBetween = calculateInsurancePeriodInDays(request);
             response.setAgreementPrice(new BigDecimal(daysBetween));
 
             return response;
+        }
+
+        private long calculateInsurancePeriodInDays(TravelCalculatePremiumRequest request) {
+            long difference = request.getAgreementDateFrom().getTime() - request.getAgreementDateTo().getTime();
+            return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
         }
 
     }
