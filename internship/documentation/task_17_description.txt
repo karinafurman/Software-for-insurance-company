@@ -1,0 +1,8 @@
+В ходе выполнения данного задания я заполнила свойство agreementPrice = days between agreementDateFrom
+and agreementDateTo. количество дней рассчитывается в методе calculatePremium класса TravelCalculatePremiumServiceImpl
+и сразу заполняется в response. В классе TravelCalculatePremiumResponse написаны геттер и сеттер для свойства
+agreementPrice.
+В классе TravelCalculatePremiumServiceImplTest были видоизменены тесты: прописан метод createRequestWithAllFields,
+представляющий собой шаблон запроса и возвращающий request; этот request теперь передается во все тесты, в том числе
+и во вновь созданный тест responseCorrectnessAgreementPrice.
+

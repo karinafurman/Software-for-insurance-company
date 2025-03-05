@@ -19,45 +19,29 @@ class TravelCalculatePremiumServiceImplTest {
 
     @Test
     public void responseCorrectnessPersonFirstName() {
-        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
-        request.setPersonFirstName("John");
-        request.setPersonLastName("Doe");
-        request.setAgreementDateFrom(new Date(2023, 10, 1));
-        request.setAgreementDateTo(new Date(2023, 10, 10));
-        TravelCalculatePremiumResponse response = service.calculatePremium(request);
+        var request = createRequestWithAllFields();
+        var response = service.calculatePremium(request);
         assertEquals(response.getPersonFirstName(), request.getPersonFirstName());
     }
 
     @Test
     public void responseCorrectnessPersonLastName() {
-        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
-        request.setPersonFirstName("John");
-        request.setPersonLastName("Doe");
-        request.setAgreementDateFrom(new Date(2023, 10, 1));
-        request.setAgreementDateTo(new Date(2023, 10, 10));
-        TravelCalculatePremiumResponse response = service.calculatePremium(request);
+        var request = createRequestWithAllFields();
+        var response = service.calculatePremium(request);
         assertEquals(response.getPersonLastName(), request.getPersonLastName());
     }
 
     @Test
     public void responseCorrectnessAgreementDateFrom() {
-        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
-        request.setPersonFirstName("John");
-        request.setPersonLastName("Doe");
-        request.setAgreementDateFrom(new Date(2023, 10, 1));
-        request.setAgreementDateTo(new Date(2023, 10, 10));
-        TravelCalculatePremiumResponse response = service.calculatePremium(request);
+        var request = createRequestWithAllFields();
+        var response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateFrom(), request.getAgreementDateFrom());
     }
 
     @Test
     public void responseCorrectnessAgreementDateTo() {
-        TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest();
-        request.setPersonFirstName("John");
-        request.setPersonLastName("Doe");
-        request.setAgreementDateFrom(new Date(2023, 10, 1));
-        request.setAgreementDateTo(new Date(2023, 10, 10));
-        TravelCalculatePremiumResponse response = service.calculatePremium(request);
+        var request = createRequestWithAllFields();
+        var response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateTo(), request.getAgreementDateTo());
     }
 
