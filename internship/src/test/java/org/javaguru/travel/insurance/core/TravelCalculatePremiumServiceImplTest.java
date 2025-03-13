@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Date;
 
@@ -15,7 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TravelCalculatePremiumServiceImplTest {
 
-    private TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl();
+    private DateTimeService dateTimeService;
+    private TravelCalculatePremiumServiceImpl service;
+
+    @BeforeEach
+    public void setUp() {
+        dateTimeService = new DateTimeService();
+        service = new TravelCalculatePremiumServiceImpl(dateTimeService);
+    }
 
     @Test
     public void responseCorrectnessPersonFirstName() {

@@ -1,0 +1,12 @@
+В ходе выполнения данного задания я познакомилась с Inversion of Control и Dependency Injection.
+Были внесены изменения в классы DateTimeService и TravelCalculatePremiumServiceImpl в соответствии с заданием:
+1. Добавлена аннотация Spring @Component над класом DateTimeService;
+2. В классе TravelCalculatePremiumServiceImpl:
+а. Создан конструктор класса DateTimeService, принимающий его в качестве параметра и сохраняющего в свойство класса;
+б. Код расчета количества дней между датами заменен на вызов метода calculateInsurancePeriodInDays
+класса DateTimeService
+в. Удален старый код расчета количества дней между датами;
+3. Внесены изменения в тестовый класс TravelCalculatePremiumServiceImplTest: создан метод SetUp, инициализирующий
+объекты, необходимые для тестирования. Аннотация @BeforeEach указывает, что метод должен выполняться перед каждым
+тестовым методом в классе.
+
