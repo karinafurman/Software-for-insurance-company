@@ -14,15 +14,20 @@ import org.junit.jupiter.api.Test;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class TravelCalculatePremiumServiceImplTest {
 
     private DateTimeService dateTimeService;
     private TravelCalculatePremiumServiceImpl service;
+    private TravelCalculatePremiumRequest request;
 
     @BeforeEach
     public void setUp() {
-        dateTimeService = new DateTimeService();
+        request = createRequestWithAllFields();
+        dateTimeService = mock(DateTimeService.class);
+        when(dateTimeService.calculateInsurancePeriodInDays(request.getAgreementDateFrom(), request.getAgreementDateTo())).thenReturn(0L);
         service = new TravelCalculatePremiumServiceImpl(dateTimeService);
     }
 
