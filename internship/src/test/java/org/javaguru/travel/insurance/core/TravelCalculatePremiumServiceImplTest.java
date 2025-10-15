@@ -11,57 +11,59 @@ import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class TravelCalculatePremiumServiceImplTest {
 
+    @Mock
     private DateTimeService dateTimeService;
+    @InjectMocks
     private TravelCalculatePremiumServiceImpl service;
     private TravelCalculatePremiumRequest request;
 
     @BeforeEach
     public void setUp() {
         request = createRequestWithAllFields();
-        dateTimeService = mock(DateTimeService.class);
         when(dateTimeService.calculateInsurancePeriodInDays(request.getAgreementDateFrom(), request.getAgreementDateTo())).thenReturn(0L);
-        service = new TravelCalculatePremiumServiceImpl(dateTimeService);
     }
+    
 
     @Test
     public void responseCorrectnessPersonFirstName() {
-        var request = createRequestWithAllFields();
         var response = service.calculatePremium(request);
         assertEquals(response.getPersonFirstName(), request.getPersonFirstName());
     }
 
     @Test
     public void responseCorrectnessPersonLastName() {
-        var request = createRequestWithAllFields();
         var response = service.calculatePremium(request);
         assertEquals(response.getPersonLastName(), request.getPersonLastName());
     }
 
     @Test
     public void responseCorrectnessAgreementDateFrom() {
-        var request = createRequestWithAllFields();
         var response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateFrom(), request.getAgreementDateFrom());
     }
 
     @Test
     public void responseCorrectnessAgreementDateTo() {
-        var request = createRequestWithAllFields();
         var response = service.calculatePremium(request);
         assertEquals(response.getAgreementDateTo(), request.getAgreementDateTo());
     }
 
     @Test
     public void responseCorrectnessAgreementPrice() {
-        var request = createRequestWithAllFields();
         var response = service.calculatePremium(request);
         assertNotNull(response.getAgreementPrice());
     }
